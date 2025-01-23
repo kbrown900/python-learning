@@ -10,3 +10,13 @@ print(r"""
 """
 )
 
+#Function Testing
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x) 
