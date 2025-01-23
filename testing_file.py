@@ -9,13 +9,7 @@ print(r"""
           \|___|/                                                   
 """
 )
-#Function Testing
-x = "awesome"
-
-def myfunc():
-  x = "fantastic"
-  print("Python is " + x)
-
-myfunc()
-
-print("Python is " + x) 
+x = 43
+x = str(x)
+print(x)
+print(type(x))
