@@ -12,4 +12,15 @@ print(r"""
 x = 43
 x = str(x)
 print(x)
-print(type(x))
+print(type(x)) 
+
+def greet():
+    print("Hello World")
+if __name__ == "__main__":
+    name = 'World'
+    x='TestWords'
+
+    def say_hello():
+        print(f"Hello {name}" + f" {x}")
+
+say_hello()
