@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 
 class GuessingGame:
-    def __init__(self, parent_window, title, menu_bar, message):
+    def __init__(self, parent_window, title, menu_bar):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
         self.new_window.geometry('350x200')

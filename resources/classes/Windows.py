@@ -1,4 +1,4 @@
-from tkinter import Toplevel, Label, Button
+from tkinter import Toplevel, Label, Button, Frame
 
 class NewWindow:     
 
@@ -11,8 +11,11 @@ class NewWindow:
         self.new_window.config(menu=menu_bar)
 
     def add_widgets(self, message):
-        self.label = Label(self.new_window, text=message )
+        frame = Frame(self.new_window)
+        frame.pack(expand=True)
+
+        self.label = Label(frame, text=message, justify="center")
         self.label.pack()
 
         button = Button(self.new_window, text="Close", command=self.new_window.destroy)
-        button.pack()
+        button.pack(pady=5)
