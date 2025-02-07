@@ -1,9 +1,14 @@
+#Imports
 import random
 from tkinter import *
 from tkinter import messagebox
 
+# Class for Guessing Number Game
 class GuessingGame:
+
+    # Function to initialize window and buttons
     def __init__(self, parent_window, title, menu_bar):
+        # New Window configuration
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
         self.new_window.geometry('350x200')
@@ -21,18 +26,20 @@ class GuessingGame:
         self.entry.pack(pady=5)
         self.entry.bind("<Return>", self.check_guess)
 
-        self.button = Button(self.new_window, text="Submit Guess", command=self.check_guess)
-        self.button.pack(pady=5)
+        # Buttons Configuration
+        self.button0 = Button(self.new_window, text="Submit Guess", command=self.check_guess)
+        self.button0.pack(pady=5)
         
-        self.button2 = Button(self.new_window, text="Reset", command=self.reset_game)
-        self.button2.pack(pady=5)
+        self.button1 = Button(self.new_window, text="Reset", command=self.reset_game)
+        self.button1.pack(pady=5)
 
-        self.button3 = Button(self.new_window, text="Close", command=self.new_window.destroy)
-        self.button3.pack(pady=5)
+        self.button2 = Button(self.new_window, text="Close", command=self.new_window.destroy)
+        self.button2.pack(pady=5)
 
         self.result_label = Label(self.new_window, text="")
         self.result_label.pack(pady=10)        
 
+    # Function for game logic
     def check_guess(self, event=None):
         try:
             guess = int(self.entry.get())
@@ -49,11 +56,13 @@ class GuessingGame:
         except ValueError:
             self.result_label.config(text="Please enter a valid number.", fg="red")
 
+    # Function to validate input
     def validate_input(self, new_value):
         if new_value.isdigit() or new_value == "":
           return True
         return False
 
+    # Function to reset game to defaults
     def reset_game(self):
         self.secret_number = random.randint(1, 100)
         self.attempts = 0

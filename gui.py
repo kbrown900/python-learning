@@ -1,9 +1,10 @@
+#Imports
 from tkinter import *
 from resources.classes.Windows import NewWindow
 from resources.classes.guess import GuessingGame
 from resources.classes.rock_paper_scissors import RockPaperScissors
 
-# Main Application Class
+# Main Application
 class MainApp:
     def __init__(self, root):
         self.window = root
@@ -18,9 +19,10 @@ class MainApp:
         self.lbl = Label(self.window, text="Select a game to play")
         self.lbl.grid(column=1,row=0, pady=10)
 
-        # Buttons
+        # Setup Buttons
         self.setup_buttons()
 
+    # Function to setup top nav menu
     def setup_menu(self):
         # Menu bar
         menu_bar = Menu(self.window)
@@ -40,6 +42,7 @@ class MainApp:
         self.window.config(menu=menu_bar)
         return menu_bar
 
+    # Function to setup game buttons
     def setup_buttons(self):
         # Configure buttons
         btn_guess = Button(self.window, text="Guess the Number", fg="Black", command=self.guess_game)
@@ -56,10 +59,11 @@ class MainApp:
         self.window.columnconfigure(1, weight=1)
         self.window.columnconfigure(2, weight=1)
 
-    #Buttons 
+    # Funtion to Close Program
     def closeProgram(self):
         self.window.quit()
 
+    # About Dialog Box
     def show_about(self):
         about_message = (
         "About\n"
@@ -69,6 +73,7 @@ class MainApp:
         )
         NewWindow(self.window, "About", self.menu_bar, about_message)
 
+    # Documentation Dialog Box
     def show_documentation(self):
         doc_message = (
         "This is a test of the Documentation Section \n"
@@ -77,11 +82,13 @@ class MainApp:
         )
         NewWindow(self.window, "Documentation", self.menu_bar, doc_message)    
 
+    #Game Launching buttons
     def guess_game(self):
         GuessingGame(self.window, "Guess the Number", self.menu_bar)
 
     def rock_paper_scissors(self):
         RockPaperScissors(self.window, "Rock Paper Scissors", self.menu_bar)
+
 
 # Main entry point
 if __name__ == "__main__":

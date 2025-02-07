@@ -1,8 +1,11 @@
+# Imports
 import random
 from tkinter import *
 from tkinter import messagebox
 
+# Class for Rock Paper Scissors Game
 class RockPaperScissors:
+    # New Window Initialization and configuration
     def __init__(self, parent_window, title, menu_bar):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
@@ -11,7 +14,7 @@ class RockPaperScissors:
         self.new_window.iconbitmap("resources/images/Support_Icon.ico")
 
         # Label
-        self.label = Label(self.new_window, text="Choose Rock, Paper, or Scissors!", font=("Arial", 12))
+        self.label = Label(self.new_window, text="Choose Rock, Paper, or Scissors!")
         self.label.pack(pady=10)
 
         # Buttons for User Choice
@@ -24,13 +27,14 @@ class RockPaperScissors:
         self.btn_scissors.pack(pady=5)
 
         # Label to Show Result
-        self.result_label = Label(self.new_window, text="", font=("Arial", 12))
+        self.result_label = Label(self.new_window, text="")
         self.result_label.pack(pady=10)
 
         # Close Button
         self.btn_close = Button(self.new_window, text="Close", width=15, command=self.new_window.destroy)
         self.btn_close.pack(pady=10)
 
+    # Function for Game Logic
     def play_game(self, user_choice):
         choices = ["Rock", "Paper", "Scissors"]
         computer_choice = random.choice(choices)

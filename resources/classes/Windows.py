@@ -1,7 +1,8 @@
+#Imports
 from tkinter import Toplevel, Label, Button, Frame
 
+# New Window for About and Documentation Dialog boxes
 class NewWindow:     
-
     def __init__(self, parent_window, title, menu_bar, message):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
