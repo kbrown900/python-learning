@@ -68,11 +68,16 @@ class MainApp:
         self.window.quit()
 
     def show_about(self):
-        about_message = "This is a test of the About Section\nso now I will keep testing"
+        about_message = \
+        "This is a test of the About Section \
+        \n so now I will keep testing \
+        \n This is version 0.0.01 \
+        \n Not sure what it will be, likely a multi game thing"
         NewWindow(self.window, "About", self.menu_bar, about_message)
 
     def show_documentation(self):
-        doc_message = "This is a test of the Documentation Section"
+        doc_message = "This is a test of the Documentation Section \
+                        \n It is just a test of Python stuff"
         NewWindow(self.window, "Documentation", self.menu_bar, doc_message)    
 
     # Function to create a new window

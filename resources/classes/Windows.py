@@ -3,7 +3,7 @@ from tkinter import Toplevel, Label, Button
 class NewWindow:     
 
     def __init__(self, parent_window, title, menu_bar, message):
-        self.new_window = Toplevel(parent_window)  # Create a new top-level window
+        self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
         self.new_window.geometry('350x200')
         self.new_window.iconbitmap("resources/images/Support_Icon.ico")
