@@ -1,24 +1,21 @@
 from tkinter import *
 from resources.classes.Windows import NewWindow
+from resources.classes.guess import GuessingGame
 
 # Main Application Class
 class MainApp:
     def __init__(self, root):
         self.window = root
-        self.window.title("Hello World")
-        self.window.geometry('350x200')
+        self.window.title("Games")
+        self.window.geometry('225x200')
         self.window.iconbitmap("resources/images/Support_Icon.ico")
         
         # Set up menu bar
         self.menu_bar = self.setup_menu()
 
-        # Add content to the main window
-        self.lbl = Label(self.window, text="Test Words for input")
-        self.lbl.grid()
-
-        # Entry Field
-        self.txt = Entry(self.window, width=10)
-        self.txt.grid(column=1, row=0)
+        # Add content to the main window0
+        self.lbl = Label(self.window, text="Select a game to play")
+        self.lbl.grid(column=1,row=0, pady=10)
 
         # Buttons
         self.setup_buttons()
@@ -30,7 +27,7 @@ class MainApp:
         # Create menu
         menu_1 = Menu(menu_bar, tearoff=0)
         menu_bar.add_cascade(label='File', menu=menu_1)
-        menu_1.add_command(label='New', command=self.reset)
+        menu_1.add_command(label="Guess the Number", command=self.guess_game)
         menu_1.add_separator()
         menu_1.add_command(label='Exit', command=self.closeProgram)
 
@@ -43,27 +40,19 @@ class MainApp:
 
     def setup_buttons(self):
         # Configure buttons
-        btn = Button(self.window, text="Click Here", fg="red", command=self.clicked)
-        btn_reset = Button(self.window, text="Reset", fg="Black", command=self.reset)
+        btn_guess = Button(self.window, text="Guess the Number", fg="Black", command=self.guess_game)
         btn_close = Button(self.window, text='Close', fg="Black", command=self.closeProgram)
-        btn_createwindow = Button(self.window, text="New Window", fg="Black", command=self.createWindow)
 
         # Set buttons to grid
-        btn.grid(column=1, row=1)
-        btn_reset.grid(column=2, row=1)
+        btn_guess.grid(column=1, row=1)
         btn_close.grid(column=1, row=2)
-        btn_createwindow.grid(column=1, row=3)
 
-    # Button functions
-    def clicked(self):
-        result = "You wrote: " + self.txt.get()
-        self.lbl.configure(text=result)
-        self.txt.delete(0, END)
+        # Align to center
+        self.window.columnconfigure(0, weight=1)
+        self.window.columnconfigure(1, weight=1)
+        self.window.columnconfigure(2, weight=1)
 
-    def reset(self):
-        self.txt.delete(0, END)
-        self.lbl.configure(text="Test Words for input")
-
+    #Buttons 
     def closeProgram(self):
         self.window.quit()
 
@@ -79,6 +68,10 @@ class MainApp:
         doc_message = "This is a test of the Documentation Section \
                         \n It is just a test of Python stuff"
         NewWindow(self.window, "Documentation", self.menu_bar, doc_message)    
+
+    def guess_game(self):
+        game_msg = "Test Message"
+        GuessingGame(self.window, "Guess the Number", self.menu_bar, game_msg)
 
     # Function to create a new window
     def createWindow(self):
