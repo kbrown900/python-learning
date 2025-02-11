@@ -11,7 +11,7 @@ class GuessingGame:
         # New Window configuration
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
-        self.new_window.geometry('350x200')
+        self.new_window.geometry('350x250')
         self.new_window.iconbitmap("resources/images/Support_Icon.ico")
         self.new_window.config(menu=menu_bar)
         self.secret_number = random.randint(1, 100)
@@ -26,6 +26,9 @@ class GuessingGame:
         self.entry.pack(pady=5)
         self.entry.bind("<Return>", self.check_guess)
 
+        self.result_label = Label(self.new_window, text="Enter a number to guess", fg="red")
+        self.result_label.pack(pady=10)     
+
         # Buttons Configuration
         self.button0 = Button(self.new_window, text="Submit Guess", command=self.check_guess)
         self.button0.pack(pady=5)
@@ -35,9 +38,6 @@ class GuessingGame:
 
         self.button2 = Button(self.new_window, text="Close", command=self.new_window.destroy)
         self.button2.pack(pady=5)
-
-        self.result_label = Label(self.new_window, text="")
-        self.result_label.pack(pady=10)        
 
     # Function for game logic
     def check_guess(self, event=None):
