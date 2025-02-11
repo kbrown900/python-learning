@@ -4,10 +4,9 @@
 
 ### Games
 
-    I am building simple games to test python and my knowledge. 
-    Just same basic games at the moment
+I am building simple games to test python and my knowledge.
+Just same basic games at the moment
 
-    - [x] Guess the Number
-    - [x] Rock Paper Scissors
-    - [] Hangman
-    
+- [x] Guess the Number
+- [x] Rock Paper Scissors
+- [] Hangman
