@@ -3,6 +3,7 @@ from tkinter import *
 from resources.classes.Windows import NewWindow
 from resources.classes.guess import GuessingGame
 from resources.classes.rock_paper_scissors import RockPaperScissors
+from resources.classes.hangman import HangmanGame
 
 # Main Application
 class MainApp:
@@ -19,7 +20,7 @@ class MainApp:
         self.lbl = Label(self.window, text="Select a game to play")
         self.lbl.grid(column=1,row=0, pady=10)
 
-        # Setup Buttons
+        # Setup Buttons00
         self.setup_buttons()
 
     # Function to setup top nav menu
@@ -32,6 +33,7 @@ class MainApp:
         menu_bar.add_cascade(label='File', menu=menu_1)
         menu_1.add_command(label="Guess the Number", command=self.guess_game)
         menu_1.add_command(label="Rock Paper Scissors", command=self.rock_paper_scissors)
+        menu_1.add_command(label="Hangman",command=self.hangman)
         menu_1.add_separator()
         menu_1.add_command(label='Exit', command=self.closeProgram)
 
@@ -47,12 +49,14 @@ class MainApp:
         # Configure buttons
         btn_guess = Button(self.window, text="Guess the Number", fg="Black", command=self.guess_game)
         btn_rps = Button(self.window, text="Rock Paper Scissors", fg="Black", command=self.rock_paper_scissors)
+        btn_hangman = Button(self.window, text="Hangman", fg="Black", command=self.hangman)
         btn_close = Button(self.window, text='Close', fg="Black", command=self.closeProgram)
 
         # Set buttons to grid
         btn_guess.grid(column=1, row=1)
         btn_rps.grid(column=1, row=2)
-        btn_close.grid(column=1, row=3)
+        btn_hangman.grid(column=1, row=3)
+        btn_close.grid(column=1, row=4)
 
         # Align to center
         self.window.columnconfigure(0, weight=1)
@@ -89,6 +93,8 @@ class MainApp:
     def rock_paper_scissors(self):
         RockPaperScissors(self.window, "Rock Paper Scissors", self.menu_bar)
 
+    def hangman(self):
+        HangmanGame(self.window,"Hangman",self.menu_bar)
 
 # Main entry point
 if __name__ == "__main__":
