@@ -5,7 +5,7 @@ class TicTacToe:
     def __init__(self, parent_window, title, menu_bar):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
-        self.new_window.geometry('300x350')
+        self.new_window.geometry('300x250')
         self.new_window.iconbitmap("resources/images/Support_Icon.ico")
         self.new_window.config(menu=menu_bar)
 
@@ -19,6 +19,8 @@ class TicTacToe:
         # Reset Button
         self.reset_button = Button(self.new_window, text="Reset Game", command=self.reset_game)
         self.reset_button.pack(pady=10)
+        self.close_button = Button(self.new_window, text="Close", command=self.close_game)
+        self.close_button.pack(pady=10)
 
     def create_board(self):
         """Create a 3x3 Tic-Tac-Toe grid using buttons."""
@@ -74,3 +76,6 @@ class TicTacToe:
         self.current_player = "X"
         for btn in self.buttons:
             btn.config(text="", state=NORMAL)
+
+    def close_game(self):
+        self.new_window.destroy()

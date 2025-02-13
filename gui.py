@@ -21,7 +21,7 @@ class MainApp:
         self.lbl = Label(self.window, text="Select a game to play")
         self.lbl.grid(column=1,row=0, pady=10)
 
-        # Setup Buttons00
+        # Setup Buttons
         self.setup_buttons()
 
     # Function to setup top nav menu
@@ -74,7 +74,7 @@ class MainApp:
     # About Dialog Box
     def show_about(self):
         about_message = (
-        "About\n"
+        "About:\n"
         "This program is a simple testing of various\n"
         "games that are made in Python.\n"
         "v.0.0.1"
