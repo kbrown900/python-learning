@@ -9,4 +9,6 @@ Just same basic games at the moment
 
 - [x] Guess the Number
 - [x] Rock Paper Scissors
-- [ ] Hangman
+- [x] Hangman
+- [x] Tic Tac Toe
+- [ ] Something Else?
