@@ -4,6 +4,7 @@ from resources.classes.Windows import NewWindow
 from resources.classes.guess import GuessingGame
 from resources.classes.rock_paper_scissors import RockPaperScissors
 from resources.classes.hangman import HangmanGame
+from resources.classes.tictactoe import TicTacToe
 
 # Main Application
 class MainApp:
@@ -16,7 +17,7 @@ class MainApp:
         # Set up menu bar
         self.menu_bar = self.setup_menu()
 
-        # Add content to the main window0
+        # Add content to the main window
         self.lbl = Label(self.window, text="Select a game to play")
         self.lbl.grid(column=1,row=0, pady=10)
 
@@ -34,6 +35,7 @@ class MainApp:
         menu_1.add_command(label="Guess the Number", command=self.guess_game)
         menu_1.add_command(label="Rock Paper Scissors", command=self.rock_paper_scissors)
         menu_1.add_command(label="Hangman",command=self.hangman)
+        menu_1.add_command(label="Tic Tac Toe",command=self.tictactoe)
         menu_1.add_separator()
         menu_1.add_command(label='Exit', command=self.closeProgram)
 
@@ -50,13 +52,15 @@ class MainApp:
         btn_guess = Button(self.window, text="Guess the Number", fg="Black", command=self.guess_game)
         btn_rps = Button(self.window, text="Rock Paper Scissors", fg="Black", command=self.rock_paper_scissors)
         btn_hangman = Button(self.window, text="Hangman", fg="Black", command=self.hangman)
+        btn_tictactoe = Button(self.window, text="Tic Tac Toe", fg="Black", command=self.tictactoe)
         btn_close = Button(self.window, text='Close', fg="Black", command=self.closeProgram)
 
         # Set buttons to grid
         btn_guess.grid(column=1, row=1)
         btn_rps.grid(column=1, row=2)
         btn_hangman.grid(column=1, row=3)
-        btn_close.grid(column=1, row=4)
+        btn_tictactoe.grid(column=1, row=4)
+        btn_close.grid(column=1, row=5)
 
         # Align to center
         self.window.columnconfigure(0, weight=1)
@@ -95,6 +99,9 @@ class MainApp:
 
     def hangman(self):
         HangmanGame(self.window,"Hangman",self.menu_bar)
+
+    def tictactoe(self):
+        TicTacToe(self.window,"Tic Tac Toe", self.menu_bar)
 
 # Main entry point
 if __name__ == "__main__":
