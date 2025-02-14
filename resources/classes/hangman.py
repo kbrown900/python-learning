@@ -1,13 +1,15 @@
 import random
 from tkinter import *
 from tkinter import messagebox
+from resources.classes.resources import resource_path
+
 
 class HangmanGame:
     def __init__(self, parent_window, title, menu_bar):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
         self.new_window.geometry('400x300')
-        self.new_window.iconbitmap("resources/images/Support_Icon.ico")
+        self.new_window.iconbitmap(resource_path("resources/images/Support_Icon.ico"))
         self.new_window.config(menu=menu_bar)
 
         self.word_list = [

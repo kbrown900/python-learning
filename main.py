@@ -1,6 +1,7 @@
 #Imports
 from tkinter import *
 from resources.classes.Windows import NewWindow
+from resources.classes.resources import resource_path
 from resources.classes.guess import GuessingGame
 from resources.classes.rock_paper_scissors import RockPaperScissors
 from resources.classes.hangman import HangmanGame
@@ -8,11 +9,12 @@ from resources.classes.tictactoe import TicTacToe
 
 # Main Application
 class MainApp:
+
     def __init__(self, root):
         self.window = root
         self.window.title("Games")
         self.window.geometry('225x200')
-        self.window.iconbitmap("resources/images/Support_Icon.ico")
+        self.window.iconbitmap(resource_path("resources/images/Support_Icon.ico"))
         
         # Set up menu bar
         self.menu_bar = self.setup_menu()
@@ -102,6 +104,7 @@ class MainApp:
 
     def tictactoe(self):
         TicTacToe(self.window,"Tic Tac Toe", self.menu_bar)
+
 
 # Main entry point
 if __name__ == "__main__":

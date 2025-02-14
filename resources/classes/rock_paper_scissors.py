@@ -1,7 +1,7 @@
 # Imports
 import random
 from tkinter import *
-from tkinter import messagebox
+from resources.classes.resources import resource_path
 
 # Class for Rock Paper Scissors Game
 class RockPaperScissors:
@@ -11,7 +11,7 @@ class RockPaperScissors:
         self.new_window.title(title)
         self.new_window.config(menu=menu_bar)
         self.new_window.geometry('400x300')
-        self.new_window.iconbitmap("resources/images/Support_Icon.ico")
+        self.new_window.iconbitmap(resource_path("resources/images/Support_Icon.ico"))
 
         # Label
         self.label = Label(self.new_window, text="Choose Rock, Paper, or Scissors!")
