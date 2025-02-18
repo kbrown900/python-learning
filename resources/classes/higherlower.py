@@ -37,5 +37,5 @@ class higherlower:
             self.label.config(text=f"Current Number: {self.current_number}")
             self.score_label.config(text=f"Score: {self.score}")
         else:
-            messagebox.showinfo("Game Over", f"Wrong guess! Your final score is {self.score}")
+            messagebox.showinfo("Game Over", f"Wrong guess! The final number was {next_number}. Your final score is {self.score}")
             self.new_window.destroy()
