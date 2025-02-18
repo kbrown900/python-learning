@@ -11,4 +11,5 @@ Just same basic games at the moment
 - [x] Rock Paper Scissors
 - [x] Hangman
 - [x] Tic Tac Toe
+- [x] Higher Lower
 - [ ] Something Else?
