@@ -83,7 +83,7 @@ class MainApp:
         "About:\n"
         "This program is a simple testing of various\n"
         "games that are made in Python.\n"
-        "v.0.0.2"
+        "v.0.1.0"
         )
         NewWindow(self.window, "About", self.menu_bar, about_message)
 

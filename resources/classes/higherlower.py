@@ -4,7 +4,7 @@ from tkinter import messagebox
 from resources.classes.resources import resource_path
 
 class higherlower:
-    def __init__(self, title, menu_bar, parent_window):
+    def __init__(self, parent_window, title, menu_bar):
         self.new_window = Toplevel(parent_window)
         self.new_window.title(title)
         self.new_window.config(menu=menu_bar)
